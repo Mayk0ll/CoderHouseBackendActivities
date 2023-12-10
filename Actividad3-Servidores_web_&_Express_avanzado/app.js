@@ -1,10 +1,11 @@
 
 const express = require('express');
 const ProductManager = require('./class/ProdcutManager');
-const app = express();
 
+const app = express();
 const products = new ProductManager();
 
+//Se ejecuta con el comando en consola  npm run dev !!!! IMPORTANTE TENER NODEMON 
 app.get('/products', async (req, res) => {
     const { limit } = req.query;
     let allProducts = await products.getAllProducts();
