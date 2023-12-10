@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "title": "Monitor 24",
+      "description": "es un monitor",
+      "price": 15,
+      "thumbnail": "https://monitor.jpg",
+      "code": 12,
+      "stock": 1000
+    },
+    {
+      "id": 2,
+      "title": "Monitor 22",
+      "description": "es un monitor",
+      "price": 10,
+      "thumbnail": "https://monitor2.jpg",
+      "code": 34,
+      "stock": 900
+    },
+    {
+      "id": 3,
+      "title": "Monitor 20",
+      "description": "es un monitor",
+      "price": 10,
+      "thumbnail": "https://monitor3.jpg",
+      "code": 56,
+      "stock": 800
+    },
+    {
+      "id": 4,
+      "title": "teclado",
+      "description": "es un teclado",
+      "price": 20,
+      "thumbnail": "https://teclado.jpg",
+      "code": 78,
+      "stock": 60
+    },
+    {
+      "id": 5,
+      "title": "Mouse x3",
+      "description": "es un mouse",
+      "price": 15,
+      "thumbnail": "https://mousex3.jpg",
+      "code": 910,
+      "stock": 50
+    },
+    {
+      "id": 6,
+      "title": "Mouse x4",
+      "description": "es un mouse",
+      "price": 25,
+      "thumbnail": "https://mousex4.jpg",
+      "code": 1112,
+      "stock": 70
+    }
+  ]
