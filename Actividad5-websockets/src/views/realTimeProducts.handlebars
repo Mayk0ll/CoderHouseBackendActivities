@@ -1,0 +1,62 @@
+<div class="containerCreateProducts">
+    <div>
+        <form action="" class="containerFormCreate" id="formCreate">
+            <h1 class="alingCenter">Crear producto</h1>
+            <div class="itemForm">
+                <label for="title"><strong>Titulo: </strong></label>
+                <input type="text" id="title">
+            </div>
+
+            <div class="itemForm">
+                <label for="description"><strong>Descripcion: </strong></label>
+                <input type="text" id="description">
+            </div>
+
+            <div class="itemForm">
+                <label for="code"><strong>Codigo: </strong></label>
+                <input type="text" id="code">
+            </div>
+
+            <div class="itemForm">
+                <label for="price"><strong>Precio: </strong></label>
+                <input type="number" id="price" min="1">
+            </div>
+
+            <div class="itemForm">
+                <label for="stock"><strong>Cantidad: </strong></label>
+                <input type="number" id="stock" min="0">
+            </div>
+
+            <div class="itemForm">
+                <label for="category"><strong>Categoria: </strong></label>
+                <input type="text" id="category">
+            </div>
+
+            <div class="alingCenter">
+                <button type="submit">Crear producto</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <div class="containerCard" id="containerCard">
+            {{#each products as |alias|}}
+                {{#if this.status}}
+                    <div class="card">
+                        <div class="imgCard">
+                            <img src="/images/imgcards.png" alt="">
+                        </div>
+                        <br>
+                        <div class="infCard">
+                            <p><strong>Nombre:</strong> {{this.title}}</p>
+                            <p><strong>Descripcion:</strong> {{this.description}}</p>
+                            <p><strong>Precio:</strong> {{this.price}}$</p>
+                        </div>
+                        <div class="alingCenter">
+                            <button onclick="borrar({{this.id}})">Borrar</button>
+                        </div>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>

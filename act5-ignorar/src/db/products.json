@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "teclado",
+    "description": "Description for teclado",
+    "code": "P001",
+    "price": 19.99,
+    "status": false,
+    "stock": 50,
+    "category": "Clothing",
+    "thumbnails": []
+  },
+  {
+    "id": 2,
+    "title": "Mouse",
+    "description": "Description for mouse",
+    "code": "P002",
+    "price": 14.99,
+    "status": true,
+    "stock": 30,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 3,
+    "title": "Monitor",
+    "description": "Description for monitor",
+    "code": "P003",
+    "price": 149.99,
+    "status": true,
+    "stock": 20,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 4,
+    "title": "Impresora",
+    "description": "Description for impresora",
+    "code": "P004",
+    "price": 89.99,
+    "status": true,
+    "stock": 15,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 5,
+    "title": "Altavoces",
+    "description": "Description for altavoces",
+    "code": "P005",
+    "price": 49.99,
+    "status": true,
+    "stock": 25,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 6,
+    "title": "Teclado Inalámbrico",
+    "description": "Description for teclado inalámbrico",
+    "code": "P006",
+    "price": 29.99,
+    "status": true,
+    "stock": 40,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 7,
+    "title": "Webcam HD",
+    "description": "Description for webcam HD",
+    "code": "P007",
+    "price": 39.99,
+    "status": true,
+    "stock": 18,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 8,
+    "title": "Disco Duro Externo",
+    "description": "Description for disco duro externo",
+    "code": "P008",
+    "price": 79.99,
+    "status": true,
+    "stock": 22,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 9,
+    "title": "Auriculares Gaming",
+    "description": "Description for auriculares gaming",
+    "code": "P009",
+    "price": 59.99,
+    "status": true,
+    "stock": 35,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 10,
+    "title": "Memoria RAM 16GB",
+    "description": "Description for memoria RAM 16GB",
+    "code": "P010",
+    "price": 129.99,
+    "status": true,
+    "stock": 12,
+    "category": "Computers",
+    "thumbnails": []
+  },
+  {
+    "id": 11,
+    "title": "Product 11",
+    "description": "Description for Product 11",
+    "code": "P011",
+    "price": 19.99,
+    "status": false,
+    "stock": 50,
+    "category": "Clothing",
+    "thumbnails": []
+  },
+  {
+    "id": 12,
+    "title": "Product 12",
+    "description": "Description for Product 12",
+    "code": "P012",
+    "price": 19.99,
+    "status": false,
+    "stock": 50,
+    "category": "Clothing",
+    "thumbnails": []
+  }
+]
