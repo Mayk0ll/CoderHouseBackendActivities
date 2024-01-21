@@ -108,27 +108,5 @@
     "stock": 12,
     "category": "Computers",
     "thumbnails": []
-  },
-  {
-    "id": 11,
-    "title": "Product 11",
-    "description": "Description for Product 11",
-    "code": "P011",
-    "price": 19.99,
-    "status": false,
-    "stock": 50,
-    "category": "Clothing",
-    "thumbnails": []
-  },
-  {
-    "id": 12,
-    "title": "Product 12",
-    "description": "Description for Product 12",
-    "code": "P012",
-    "price": 19.99,
-    "status": false,
-    "stock": 50,
-    "category": "Clothing",
-    "thumbnails": []
   }
 ]

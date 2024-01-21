@@ -1,9 +1,9 @@
-const Router = require ("express");
-const { createNewItem, getDataFile, safeFile } = require ("../helpers/jsonFuntions.js");
+import { Router } from "express";
+import { createNewItem, getDataFile, safeFile } from "../dao/managers/fileSystem/jsonFuntions.js";
 
 const router = Router();
 
-router.get('/carts/:cid', (req, res) => {
+router.get('/:cid', (req, res) => {
     try {
         const {cid} = req.params;
         const carts = getDataFile('carts');
@@ -25,12 +25,10 @@ router.get('/carts/:cid', (req, res) => {
 })
 
 router.post('/carts', (req, res) => {
-    const newCart = { products : [] }
-    createNewItem('carts', newCart);
-    res.send({data: 'hecho'})
+
 })
 
-router.put('/:cid/carts/:pid', (req, res) => {
+router.put('/:cid/cart/:pid', (req, res) => {
     const { cid, pid } = req.params;
     const carts = getDataFile('carts');
     const index = carts.findIndex(cart => cart.id == cid);
@@ -57,4 +55,4 @@ router.put('/:cid/carts/:pid', (req, res) => {
     res.send({data: 'Se actualizo el carrito correctamente'});
 })
 
-module.exports = router;
+export default router;

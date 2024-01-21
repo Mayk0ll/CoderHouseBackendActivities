@@ -1,24 +1,21 @@
-const Router = require ("express");
-const { createNewItem, getDataFile, safeFile } = require ("../helpers/jsonFuntions.js");
+import { Router } from "express";
+import { createNewItem, getDataFile, safeFile } from "../dao/managers/fileSystem/jsonFuntions.js";
 
 const router = Router();
 
-router.get('/products', async (req, res) => {
+router.get('', async (req, res) => {
     try {
-        // const { limit } = req.query;
-        // const products = await getDataFile('products').filter(p => p.status == true);
-        // if(limit) products = [...products.slice(0, limit)];
+        const { limit } = req.query;
+        const products = await getDataFile('products').filter(p => p.status == true);
+        if(limit) products = [...products.slice(0, limit)];
 
-        // res.send({data: products});
-        // console.log(pathViews)
-        // console.log(res.render())
-        res.render('products');
+        res.send({data: products});
     } catch (error) {
         console.log(error)
     }
 })
 
-router.get('/products/:pid', async (req, res) => {
+router.get('/:pid', async (req, res) => {
     try {
         const { pid } = req.params;
         const products = await getDataFile('products');
@@ -29,18 +26,19 @@ router.get('/products/:pid', async (req, res) => {
     }
 })
 
-router.post('/products', async (req, res) => {
+router.post('', async (req, res) => {
     try {
         const {title, description, code, price, status = true, stock, category, thumbnails = []} = req.body;
         if(!title || !description || !code || !price || !stock || !category) return res.status(400).send({data: 'Todos los campos son obligatorios'});
         createNewItem('products', {id: 0, title, description, code, price, status , stock, category, thumbnails});
+        console.log('creado')
         res.send({data: 'El producto se creo correctamente'});
     } catch (error) {
         console.log(error);
     }
 })
 
-router.put('/products', async (req, res) => {
+router.put('', async (req, res) => {
     try {
         const {id, title, description, code, price, status, stock, category, thumbnails = []} = req.body;
         const products = await getDataFile('products');
@@ -57,7 +55,7 @@ router.put('/products', async (req, res) => {
     }
 })
 
-router.delete('/products/:pid', async (req, res) => {
+router.delete('/:pid', async (req, res) => {
     try {
         const { pid } = req.params;
         const products = await getDataFile('products');
@@ -71,4 +69,4 @@ router.delete('/products/:pid', async (req, res) => {
     }
 })
 
-module.exports = router;
+export default router;
