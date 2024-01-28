@@ -50,6 +50,7 @@ router.put('/:cid/cart/:pid', async (req, res) => {
             if(!product) res.status(400).send({data: 'El producto no existe'});
             cart.products.push({product: req.params.pid, quantity: 1});
         }
+        console.log(cart)
 
         const cartUpdate = await cartsManager.update(cart);
 

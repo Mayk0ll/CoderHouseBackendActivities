@@ -18,7 +18,7 @@ class CartMongoManager {
     }
 
     async update(cart) {
-        return await this.cartModel.findByIdAndUpdate(cart.id, cart, {new: true}) ;
+        return await this.cartModel.findByIdAndUpdate(cart._id, cart, {new: true}) ;
     }
 }
 
