@@ -5,8 +5,12 @@ class CartMongoManager {
         this.cartModel = cartModel;
     }
 
+    async AllCarts() {
+        return await this.cartModel.find();
+    }
+
     async getById(pid) {
-        return await this.cartModel.findById(pid);
+        return await this.cartModel.findById(pid).lean();
     }
 
     async create(cart) {
@@ -14,7 +18,6 @@ class CartMongoManager {
     }
 
     async update(cart) {
-        
         return await this.cartModel.findByIdAndUpdate(cart.id, cart, {new: true}) ;
     }
 }

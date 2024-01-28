@@ -13,6 +13,20 @@ router.get('', async (req, res) => {
     }
 })
 
+router.get('/paginate', async (req, res) => {
+
+    //  http://localhost:8080/api/products/paginate?page=1&category=clothing&direction=1
+
+    try {
+        const allProducts = await productsManager.getAllWithPaginate(req.query);
+        const {docs, ...products} = allProducts;
+        products.payload = docs;
+        res.send({data: products});
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 router.get('/:pid', async (req, res) => {
     try {
         const product = await productsManager.getById(req.params.pid);
@@ -29,6 +43,7 @@ router.post('', async (req, res) => {
         res.send({data: `El producto se creo correctamente \n ${product}`});
     } catch (error) {
         console.log(error);
+        res.status(500).send({data: 'error al crear este producto'});
     }
 })
 
@@ -49,5 +64,6 @@ router.delete('/:pid', async (req, res) => {
         console.log(error);
     }
 })
+
 
 export default router;

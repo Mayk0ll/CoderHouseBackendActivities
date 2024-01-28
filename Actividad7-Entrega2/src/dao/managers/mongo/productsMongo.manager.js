@@ -25,6 +25,11 @@ class ProductsMongoManager {
         return await this.products.findByIdAndUpdate(pid, {status: false}, {new: true});
     }
 
+    async getAllWithPaginate(props) {
+        const { page, direction, category, limit = 8} = props;
+        return await this.products.paginate({category: { $regex: category,  $options: 'i' }, status: true},{page, limit, sort: {price: Number(direction)}, lean: true});
+    }
+
 }
 
 export default ProductsMongoManager;

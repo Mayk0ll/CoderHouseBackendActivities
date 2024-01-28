@@ -1,0 +1,25 @@
+<div>
+    <h1>Carrito</h1>
+    <div class="cartContainer">
+        <div class="cartContainerItems">
+            {{#each products}}
+                
+                <div class="cartItem">
+                    <div class="imgCard2">
+                        <img src="/images/imgcards.png" alt="">
+                    </div>
+                    <div>
+                        <h1>Producto: {{this.product.title}}</h1>
+                        <p>{{this.product.description}}</p>
+                        <p>Precio: {{this.product.price}}$</p>
+                        <p>Cantidad: {{this.quantity}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        <div>
+            <h3>total: {{this.total}}$</h3>
+            <button type="button" class="buttons2"> Realizar compra (deshabilitado)</button>
+        </div>
+    </div>
+</div>

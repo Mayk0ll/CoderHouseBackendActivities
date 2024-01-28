@@ -38,6 +38,7 @@ img{
 .alingCenter{
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 .container{
@@ -81,9 +82,23 @@ img{
     height: 150px;
 }
 
+.imgCard2{
+    width: 150px;
+    height: 150px;
+}
+
 .containerCreateProducts{
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+.containerProducts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
 }
 
 .containerFormCreate{
@@ -133,4 +148,66 @@ img{
     color: blue;
     padding: 1px 10px;
     border-radius: 10px;
+}
+
+.buttons{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.buttons2{
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.buttonsDisable{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    padding: 5px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cartContainer{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.cartContainerItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cartItem{
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
+    gap: 20px;
 }
