@@ -1,0 +1,19 @@
+<div>
+    <div class="containerCard">
+        {{#each products as |alias|}}
+            {{#if this.status}}
+                <div class="card">
+                    <div class="imgCard">
+                        <img src="/images/imgcards.png" alt="">
+                    </div>
+                    <br>
+                    <div class="infCard">
+                        <p><strong>Nombre:</strong> {{this.title}}</p>
+                        <p><strong>Descripcion:</strong> {{this.description}}</p>
+                        <p><strong>Precio:</strong> {{this.price}}$</p>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
