@@ -40,6 +40,7 @@ router.get('/products', async (req, res) => {
     try {
         const { page = 1, direction = 1, category = '' } = req.query;
         const {docs, ...products} = await productsManager.getAllWithPaginate({page, direction, category});
+        if (req.session.user) products.user = `${req.session.user.first_name} ${req.session.user.last_name}`
         products.payload = docs;        
         res.render('products', {products})
     } catch (error) {
