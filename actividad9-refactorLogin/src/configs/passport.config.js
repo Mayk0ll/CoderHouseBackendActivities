@@ -19,7 +19,6 @@ const initializePassport = () => {
             if (user) done(null, false, { message: 'User already exists' });
             req.body.password = hashPassword(password);
             const createdUser = await usersManager.create(req.body);
-            req.user = createdUser;
             done(null, createdUser);
         } catch (error) {
             console.log(error)

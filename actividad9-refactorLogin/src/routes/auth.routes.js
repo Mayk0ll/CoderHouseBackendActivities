@@ -38,12 +38,11 @@ router.post("/logout", (req, res) => {
         });
     } catch (error) {
         console.log(error);
-        res.status(500).send({message: error.message});
+        res.status(500).send({message: error.message}); 
     }
 });
 
 router.post('/register', passport.authenticate('register', { failureRedirect: '/api/auth/fail' }), (req, res) => {
-    console.log(req.session)
     req.session.user = req.user;
     res.json({status: 'success', message: 'Usuario creado correctamente'});
 });
