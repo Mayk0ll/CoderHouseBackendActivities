@@ -44,6 +44,10 @@ const goLogin = () => {
 }
 
 
-const logout = () => {
+const logout = async () => {
+    await fetch('http://localhost:8080/api/auth/logout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'}
+    })
     window.location.href = 'http://localhost:8080/render/login'
 }

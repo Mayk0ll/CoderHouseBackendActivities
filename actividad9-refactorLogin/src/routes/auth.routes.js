@@ -30,11 +30,26 @@ router.post("/registerWithoutPassport", async (req, res) => {
     }
 });
 
+router.post("/logout", (req, res) => {
+    try {
+        req.session.destroy( err => {
+            if (err) return res.status(500).send({message: err.message});
+            return res.send({status: "success", message: "Sesion cerrada correctamente"});
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({message: error.message});
+    }
+});
+
 router.post('/register', passport.authenticate('register', { failureRedirect: '/api/auth/fail' }), (req, res) => {
+    console.log(req.session)
+    req.session.user = req.user;
     res.json({status: 'success', message: 'Usuario creado correctamente'});
 });
 
 router.post('/login', passport.authenticate('login', { failureRedirect: '/api/auth/fail' }), (req, res) => {
+    req.session.user = req.user;
     res.send({status: 'success', message: 'Usuario logueado correctamente'});
 });
 
