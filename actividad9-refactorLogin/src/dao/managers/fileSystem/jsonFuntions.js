@@ -1,5 +1,5 @@
 import fs, { promises as fsp } from "fs";
-import __dirname from "../../../utils.js";
+import { _dirname } from "../../../utils/index.js";
 
 
 export const getDataFile = (name) => {

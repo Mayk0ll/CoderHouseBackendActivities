@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import { engine } from 'express-handlebars';
 import { Server } from 'socket.io';
-import dirname from "./utils.js";
+import { _dirname } from "./utils/index.js";
 import routes from "./routes/index.js";
 import viewsRouter from "./routes/views.routes.js";
 import io from './socket.js';
@@ -10,7 +10,9 @@ import connectionMongoDB from './configs/config.js';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
-
+import passport from 'passport';
+import initializePassport from './configs/passport.config.js';
+import initializePassportGithub from './configs/passportGithub.config.js';
 
 const port = 8080;
 const app = express();
@@ -28,14 +30,18 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
 }));
+initializePassport();
+initializePassportGithub();
+app.use(passport.initialize());
+app.use(passport.session());
 
 connectionMongoDB();
 
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views', dirname+'/views');
+app.set('views', _dirname+'/views');
 
-app.use('/', express.static(dirname+"/public"));
+app.use('/', express.static(_dirname+"/public"));
 
 app.use('/api', routes);
 app.use('/render', viewsRouter);
