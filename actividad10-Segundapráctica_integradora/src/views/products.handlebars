@@ -1,0 +1,55 @@
+{{#if products.user}}
+    <h4 class="alingCenter">Bienvenido {{products.user}}</h4>
+{{/if}}
+<div class="containerProducts">
+    <label for="ordenar_precio">Ordenar precio: </label>
+    <select name="ordenar_precio" id="ordenar_precio">
+        <option value="" disabled selected></option>
+        <option value="1">Menor a mayor</option>
+        <option value="-1">Mayor a menor</option>
+    </select>
+    <label for="categoria">filtrar categoria: </label>
+    <select name="categoria" id="categoria">
+        <option value="" disabled selected></option>
+        <option value="clothing">Clothing</option>
+        <option value="test">Prueba</option>
+    </select>
+    <button class="buttons" type="button" onclick="changePage()"> Aplicar</button>
+    <div class="containerCard" id="containerCard">
+        {{#each products.payload}}
+            <div class="card">
+                <div class="imgCard">
+                    <img src="/images/imgcards.png" alt="">
+                </div>
+                <br>
+                <div class="infCard">
+                    <p><strong>Nombre:</strong> {{this.title}}</p>
+                    <p><strong>Descripcion:</strong> {{this.description}}</p>
+                    <p><strong>Precio:</strong> {{this.price}}$</p>
+                    <p><strong>Categoria:</strong> {{this.category}}</p>
+                </div>
+                <div class="alingCenter">
+                    <button onclick="addCart('{{this._id}}')">Agregar al carrito</button>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<div class="pagination">
+    {{#if products.hasPrevPage}}
+        <button type="button" class="buttons" onclick="changePage({{products.prevPage}})"> Anterior </button>
+    {{else}}
+        <button type="button" class="buttonsDisable" disable> Anterior</button>
+    {{/if}}
+    <h3> -- {{products.page}} -- </h3>
+    {{#if products.hasNextPage}}
+        <button type="button" class="buttons" onclick="changePage({{products.nextPage}})"> Siguiente </button>
+    {{else}}
+        <button type="button" class="buttonsDisable" disable> Siguiente</button>
+    {{/if}}
+</div>
+<script src="/js/products.js">
+    const prueba = () => {
+    return "/render/products?page={{products.nextPage}}"
+}
+</script>
